@@ -1,4 +1,3 @@
-
 In this file I'd like to describe some ideas I think would
 improve gitolite's usability, as well as perhaps make it 
 easier to extend and integrate with other pieces of software.
@@ -32,7 +31,20 @@ end for various reasons:
  * quickly add/remove users from a group
  * quickly change repo ACLs for a user or group
  * if a hosted repo somehow ends up with missing or
-   messed-up hooks, be able to re-inject them
+   messed-up hooks, be able to fix them
 
+For example, a gol command...
 
+  gol add user foousr to group bargrp
+  gol mod user foousr set acl R on repo bazrpo
+  gol fix repo git@server.com:somerepo.git
 
+The command syntax could be anything really. The above is just my imagination...
+
+I'd be happy with anything, really, as long as it makes sense to plenty of other people...
+
+  # create @bargrp = foousr, or append foousr if @bargrp already exists.
+  gol add @bargrp foousr
+  gol add --user=foousr --group=bargrp
+
+Fee free to comment and add your $.02!
