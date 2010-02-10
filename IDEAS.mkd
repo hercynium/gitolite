@@ -1,0 +1,38 @@
+
+In this file I'd like to describe some ideas I think would
+improve gitolite's usability, as well as perhaps make it 
+easier to extend and integrate with other pieces of software.
+
+----
+
+First, I'd like to see a better setup/install process.
+
+ * when setting up the server-side, don't rely on having
+   passwordless-auth to the user account on the other end.
+   * could run ssh-copy-id for them
+ * when setting up the server-side ask the user if they
+   want to use an existing public key instead of (or in 
+   addition to) generating a new key-pair
+ * if their existing public key is already on the server,
+   ask if the user wants that key to be used for gitolite
+   access or normal shell access.
+ * if a new key is being generated in addition to an 
+   existing key, ask which one gets gitolite access and
+   which one is for normal shell access.
+ * ASK BEFORE MODIFYING THE USER'S .ssh/config file!!!
+ * ASK WHERE TO SAVE THE INITIAL gitosis-admin CHECKOUT!
+ * perhaps, make the name of the gitosis-admin repo
+   configurable
+
+----
+
+I'd like to have some command-line utility on the client's
+end for various reasons:
+
+ * quickly add/remove users from a group
+ * quickly change repo ACLs for a user or group
+ * if a hosted repo somehow ends up with missing or
+   messed-up hooks, be able to re-inject them
+
+
+
