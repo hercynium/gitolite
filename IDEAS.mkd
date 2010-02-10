@@ -35,16 +35,16 @@ end for various reasons:
 
 For example, a gol command...
 
-  gol add user foousr to group bargrp
-  gol mod user foousr set acl R on repo bazrpo
-  gol fix repo git@server.com:somerepo.git
+    gol add user foousr to group bargrp
+    gol mod user foousr set acl R on repo bazrpo
+    gol fix repo git@server.com:somerepo.git
 
 The command syntax could be anything really. The above is just my imagination...
 
 I'd be happy with anything, really, as long as it makes sense to plenty of other people...
 
-  # create @bargrp = foousr, or append foousr if @bargrp already exists.
-  gol add @bargrp foousr
-  gol add --user=foousr --group=bargrp
+    # create @bargrp = foousr, or append foousr if @bargrp already exists.
+    gol add @bargrp foousr
+    gol add --user=foousr --group=bargrp
 
 Fee free to comment and add your $.02!
